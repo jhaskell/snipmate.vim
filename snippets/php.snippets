@@ -134,19 +134,6 @@ snippet doc_i
 	interface ${1:}
 	{${5}
 	} // END interface $1
-# class ...
-snippet class
-	/**
-	 * ${1}
-	 **/
-	class ${2:ClassName}
-	{
-		${3}
-		function ${4:__construct}(${5:argument})
-		{
-			${6:// code...}
-		}
-	}
 # define(...)
 snippet def
 	define('${1}'${2});${3}
@@ -214,3 +201,12 @@ snippet fun
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet class
+<?php
+
+namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
+
+class ${2:`Filename('', 'myClass')`}
+{
+    ${3}
+}
