@@ -210,4 +210,5 @@ snippet class
 	{
 		${3}
 	}
-
+snippet name
+	namespace `substitute(substitute(substitute(expand("%:p"), '\v(.*\/\l+)((\/\u\w+)+)\/\u\w+.php$', '\2', ''), '\/', '\\\\', 'g'), '\\\\', '', '')`;
