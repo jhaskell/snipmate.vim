@@ -206,9 +206,14 @@ snippet class
 
 	namespace `substitute(substitute(substitute(expand("%:p"), '\v(.*\/\l+)((\/\u\w+)+)\/\u\w+.php$', '\2', ''), '\/', '\\\\', 'g'), '\\\\', '', '')`;
 
-	class ${2:`Filename('', 'myClass')`}
+	/**
+	 * $1
+	 *
+	 * @author `g:snips_author`
+	 */
+	${2:class} ${3:`Filename('', 'myClass')`}
 	{
-		${3}
+		${4}
 	}
 snippet name
 	namespace `substitute(substitute(substitute(expand("%:p"), '\v(.*\/\l+)((\/\u\w+)+)\/\u\w+.php$', '\2', ''), '\/', '\\\\', 'g'), '\\\\', '', '')`;
